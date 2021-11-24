@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<meta charset = "utf-8">
+<html lang="ko">
+    <head>
+        <title>N.D</title>
+        <script src="./js/jquery-1.11.2.js"></script>
+
+
+
+        <script type="text/javascript" src="./js/Grave.js"></script>
+        <script type="text/javascript" src="./js/Living.js"></script>
+        <script type="text/javascript" src="./js/MonsterManager.js"></script>
+        <script type="text/javascript" src="./js/Monster.js"></script>
+        <script type="text/javascript" src="./js/Hero.js"></script>
+        <script type="text/javascript" src="./js/Warrior.js"></script>
+        <script type="text/javascript" src="./js/Projection.js"></script>
+        <script type="text/javascript" src="./js/Dealer.js"></script>
+        <script type="text/javascript" src="./js/Tanker.js"></script>
+        <script type="text/javascript" src="./js/Healer.js"></script>
+        <script type="text/javascript" src="./js/Beginner.js"></script>
+        <script type="text/javascript" src="./js/HeroManager.js"></script>        
+        <script type="text/javascript" src="./js/Obstacle.js"></script>
+        <script type="text/javascript" src="./js/Trophy.js"></script>
+        <script type="text/javascript" src="./js/Stage.js"></script>
+        <script type="text/javascript" src="./js/StageMap.js"></script>
+        <script type="text/javascript" src="./js/EventListener.js"></script>
+        <script type="text/javascript" src="./js/Title.js"></script>        
+        <script type="text/javascript" src="./js/Manager.js"></script>
+
+
+
+        <script type="text/javascript" src="./js/play.js"></script>
+        <link rel="stylesheet" type="text/css" href="./css/play.css">
+    </head>
+    <body>
+    <div id="stageWrapper" class="reactive">
+        <div class="stagePadding"></div>
+     <div id="stage_num" class='invisible'></div>
+     <div class="stagePadding"></div>
+    </div>
+        <div id="wrapper">
+
+            <div id="wrapper_opacity">
+                <div id="title">
+                    <div id="game_title">
+                        <p></p>
+                    </div>
+                    <div id="select_title">
+                        <ul>
+                            <li class="selected" id='gameStartToggle'></li>
+                            <li id='characterSelectToggle'>
+                            </li>
+                            <li id='settingToggle'></li>
+                        </ul>
+                        <div id = "title_popup">
+                            <div id = "characterSelectPopup" style = "opacity : 0%;" class = "popup_transition">
+                                <p class = "selected_popup"> 1P </p>
+                                <p> 2P </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="p2_status" class="sidebar invisible frame">
+                    <div id="p2_status_label" class="status_label">
+                    </div>
+                    <div id="p2_job" class="player_job_wrapper"></div>
+                    <div id="p2_select_status_wrapper" class="select_status_wrapper"></div>
+                    <div class="status_padding"></div>
+                </div>
+                <div id="field_wrapper" class="invisible">
+                    <div id="padding_upside" class="padding frame">
+                        <div id="menu"></div>
+                        <div id="boss_hp" class="invisible">
+                            <div id="boss_remain_wrapper">
+                                <div id="boss_remain"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="item_select" class="invisible">
+                        <div id="item_select_title" class="itemPadding"></div>
+                        <div id="itemWrapper">
+                        </div>
+                        <div id="itemDownPadding" class="itemPadding">
+                        </div>
+                    </div>
+                    <div id="field" class="invisible reactive">
+                    </div>
+                    <div id="padding_downside" class="padding frame"></div>
+                </div>
+                <div id="p1_status" class="sidebar invisible frame">
+                    <div id="p1_status_label" class="status_label">
+                    </div>
+                    <div id="p1_job" class="player_job_wrapper"></div>
+                    <div id="p1_select_status_wrapper" class="select_status_wrapper"></div>
+                    <div class="status_padding"></div>
+                </div>
+            </div>
+        </div>
+    </body>

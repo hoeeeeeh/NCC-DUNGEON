@@ -1,0 +1,803 @@
+body {
+    margin : 0px;
+    background-color: rgb(20%,20%, 20%);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#stageWrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.stagePadding {
+    height: 40%;
+}
+
+#stage_num {
+    position: relative;
+    margin: 0 auto;
+    width: 70%;
+    height: 20%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70% 50%;
+    z-index : 999;
+}
+
+#wrapper {
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/background/background_1.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center ;
+    filter: grayscale(0%);
+    transition: all 5s;
+}
+
+#wrapper_opacity {
+    width: 100%;
+    height: 100%;
+}
+
+.gameover {
+    filter: grayscale(100%);
+    opacity: 30%;
+}
+
+#title {
+    width: 100%;
+    height: 100%;
+    margin : 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#game_title {
+    width : 80%;
+    height: 50%;
+    margin: 0 auto;
+}
+
+#game_title p {
+    width: 100%;
+    height: 50%;
+    margin : 0px;
+    text-align: center;
+    font-size: 5em;
+    line-height: 800%;
+    background-image: url('../img/title/ncc_dungeon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    padding-top: 500px;
+}
+
+#select_title {
+    display : flex;
+    width: 50%;
+    height: 50%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 3em;
+}
+
+#select_title ul {
+    float : left;
+    display: block;
+    width : 50%;
+    height: 50%;
+    padding: 0px;
+    margin: 0 auto;
+    list-style-type: none;
+}
+
+#select_title ul li {
+    position : relative;
+    display: flex;
+    width: 60%;
+    height: 33.3%;
+    text-align : center;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin : 0 auto;
+}
+
+#title_popup{
+    width : 0%;
+    height : 50%;
+    transition : width 1s;
+    text-shadow: 2px 2px 2px #000;
+    color : rgba(127,127,127,1);
+}
+
+.popup_hidden{
+    opacity: 0%;
+}
+.popup_transition{
+    transition : opacity 1s;
+}
+
+.selected_popup{
+    color : red;
+}
+
+#select_title ul li:nth-child(1) {
+    background-image: url('../img/title/gamestart_unselected.png');
+    background-size: auto 85%;
+}
+
+#select_title ul li:nth-child(1).selected {
+    background-image: url('../img/title/gamestart_selected.png');
+    background-size: auto 86%;
+}
+
+#select_title ul li:nth-child(2) {
+    background-image: url('../img/title/character_unselected.png');
+    background-size: auto 85%;
+}
+
+#select_title ul li:nth-child(2).selected {
+    background-image: url('../img/title/character_selected.png');
+    background-size: auto 86%;
+}
+
+#select_title ul li:nth-child(3) {
+    background-image: url('../img/title/setting_unselected.png');
+    background-size: auto 85%;
+}
+
+#select_title ul li:nth-child(3).selected {
+    background-image: url('../img/title/setting_selected.png');
+    background-size: auto 86%;
+}
+
+.frame {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.padding {
+    position: relative;
+    height: 20%;
+    width: 100%;
+}
+
+#padding_downside {
+    position: absolute;
+    bottom: 5px;
+}
+
+#menu {
+    width: 100%;
+    height: 140px;
+}
+
+#boss_hp {
+    position: relative;
+    width: 100%;
+    height: 28%;
+    background-image: url('../img/monster/boss/bosshp.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+#boss_remain_wrapper {
+    position: absolute;
+    top: 30%;
+    left: 1.2%;
+    width: 97.5%;
+    height: 41%;
+}
+
+#boss_remain {
+    border-radius: 7px;
+    width: 100%;
+    height: 100%;
+    background-color: #d22c2c;
+}
+
+.sidebar {
+    z-index: -10;
+    float: left;
+    width: 15%;
+    height: 100%;
+    display: flex;
+    flex-direction : column;
+    justify-content : space-around;
+    align-items : center;
+}
+
+.player_job_wrapper{
+    height: 20%;
+    width: 80%;
+    border-style : solid;
+    border-style : solid;
+    border-width : 0.45em;
+    border-radius : 0.4em;
+    background-color :  rgba(163, 234, 183, 0.3);
+    background-size : 100% 100%;
+    background-position : center;
+    
+
+}
+
+.status_label {
+    margin-top : 40%;
+    width: 100%;
+    height: 12%;
+    background-image: url('../img/sidebar/stat.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+.select_status_wrapper{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction : column;
+    justify-content : space-around;
+    align-items : center;
+    padding-top : 10%;
+}
+
+.selectedStat{
+    height: 12%;
+    width : 45%;
+    display: flex;
+    justify-content : space-around;
+    align-items : center;
+    border-style : solid;
+    border-width : 0.3em;
+    border-radius : 0.4em;
+    background-color :  rgba(212, 206, 167, 0.3);
+    padding : 2%;
+}
+
+.stat_pick_num{
+    height: 90%;
+    width: 100%;
+    text-align : center;
+    line-height : 150%;
+    font-size : 2em;
+    
+}
+
+.stat_img{
+    height: 84%;
+    width : 60%;  
+    background-repeat : no-repeat;
+    background-position: center;
+    background-size : 100% 100%;
+}
+
+.status_padding{
+    height: 20%;
+    width: 100%;
+}
+
+
+#item_label {
+    height: 20%;
+    background-image: url('../img/sidebar/item.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+#field_wrapper {
+    float: left;
+    position: relative;
+    width: 70%;
+    height : 100%;
+}
+
+#field {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 60%;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 7px;
+}
+
+#land {
+    position: fixed;
+    bottom: 5%;
+    left: 5%;
+    height : 10%;
+    width: 50%;
+    background-color : black;
+}
+
+#player_1 {
+    background-image : url('../img/character/kyo/1p/1p.png');
+}
+
+#player_2 {
+    background-image : url('../img/character/net/2p/2p.png');
+}
+
+.player {
+    position: relative;
+    margin-left: 9px;
+    margin-bottom: 5px;
+    width: 21px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+#char_figure_1 {
+    position: relative;
+    width: 40px;
+    height: 50px;
+    margin-top : 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 125% 100%;
+}
+
+#char_figure_2 {
+    position: relative;
+    width: 40px;
+    height: 50px;
+    margin-top : 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 125% 100%;
+}
+
+.shield {
+    position: absolute;
+}
+
+.shield_left {
+    width: 20px;
+    height: 280px;
+    background-image : url('../img/character/tanker/shield/shield_left.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.shield_right {
+    width: 20px;
+    height: 280px;
+    background-image : url('../img/character/tanker/shield/shield_right.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.shield_up {
+    height: 20px;
+    width: 280px;
+    background-image : url('../img/character/tanker/shield/shield_forward.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.shield_bottom {
+    height: 20px;
+    width: 280px;
+    background-image : url('../img/character/tanker/shield/shield_back.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.shieldGauge_0{
+    background-color: #f8ff97;
+}
+
+.shieldGauge_1{
+    background-color:  #f8ff97;
+}
+
+.character {
+    position: fixed;
+    width: 40px;
+    height: 110px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+.char_hp {
+    position: relative;
+    width: 40px;
+    height: 5px;
+    overflow: hidden;
+    background-color: #aaaaaa;
+    border-radius: 3px;
+}
+
+#hp_1 {
+    position: relative;
+    width: 100%;
+    height: 5px;
+    background-color: #E91E63;
+}
+
+#hp_2 {
+    position: relative;
+    width: 100%;
+    height: 5px;
+    background-color: #E91E63;
+}
+
+#grave_1 {
+    width: 64px;
+    height: 64px;
+    position: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    background-image : url('../img/character/common/grave_p1.png');
+}
+
+#grave_2 {
+    width: 64px;
+    height: 64px;
+    position: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    background-image : url('../img/character/common/grave_p2.png');
+}
+
+.dealerAttack{
+    position: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 120%;
+    width: 48px;
+    height: 48px;
+}
+
+.dealerAttackLeft{
+    background-image : url('../img/character/dealer/attack/attack_left.png');
+}
+
+.dealerAttackRight{
+    background-image : url('../img/character/dealer/attack/attack_right.png');
+}
+.dealerAttackDown{
+    background-image : url('../img/character/dealer/attack/attack_down.png');
+}
+.dealerAttackForward{
+    background-image : url('../img/character/dealer/attack/attack_forward.png');
+}
+
+.char_attack {
+    position: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150%;
+    background-image : url('../img/character/kyo/attack/attack_forward.png');
+}
+
+.char_attack_38 {
+    background-image : url('../img/character/kyo/attack/attack_forward.png');
+}
+
+.char_attack_40 {
+    background-image : url('../img/character/kyo/attack/attack_back.png');
+}
+
+.char_attack_37 {
+    background-image : url('../img/character/kyo/attack/attack_left.png');
+}
+
+.char_attack_39 {
+    background-image : url('../img/character/kyo/attack/attack_right.png');
+    width : 50px;
+    height : 50px;
+}
+
+.char_attack_82 {
+    background-image : url('../img/character/net/attack/attack_forward.png');
+    width : 50px;
+    height : 50px;
+}
+
+.char_attack_70 {
+    background-image : url('../img/character/net/attack/attack_back.png');
+    width : 50px;
+    height : 50px;
+}
+
+.char_attack_68 {
+    background-image : url('../img/character/net/attack/attack_left.png');
+    width : 50px;
+    height : 50px;
+}
+
+.char_attack_71 {
+    background-image : url('../img/character/net/attack/attack_right.png');
+    width : 50px;
+    height : 50px;
+}
+
+.charging_left {
+    background-image : url('../img/character/adcarry/attack/charging_attack_left.png');
+}
+
+.charging_right {
+    background-image : url('../img/character/adcarry/attack/charging_attack_right.png');
+}
+
+.charging_forward {
+    background-image : url('../img/character/adcarry/attack/charging_attack_forward.png');
+}
+
+.charging_back {
+    background-image : url('../img/character/adcarry/attack/charging_attack_back.png');
+}
+
+.charging_left1 {
+    background-image : url('../img/character/healer/attack/charging_attack_left.png');
+}
+
+.charging_right1 {
+    background-image : url('../img/character/healer/attack/charging_attack_right.png');
+}
+
+.charging_forward1 {
+    background-image : url('../img/character/healer/attack/charging_attack_forward.png');
+}
+
+.charging_back1 {
+    background-image : url('../img/character/healer/attack/charging_attack_back.png');
+}
+
+.bat {
+    width: 50px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+.bronzeBat{
+    width: 50px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    background-image: url('../img/monster/bat/move/bronze/bronze.png');
+}
+
+.kingbat {
+    width: 250px;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+.penguin {
+    width: 48px;
+    height: 48px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+.elsa{
+    width: 103.5px;
+    height: 157.5px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+.iceKnight{
+    width: 36.4px;
+    height: 53.3px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+.snow{
+    position: fixed;
+    width : 32px;
+    height : 36px;
+    background-image: url('../img/monster/penguin/elsa/snow.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+.kingpenguin{
+    width: 48px;
+    height: 48px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+.ghost {
+    width: 50px;
+    height: 38px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+}
+
+.grimreaper {
+    width: 200px;
+    height: 230px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90% 90%;
+}
+
+.monster {
+    position: fixed;
+    z-index : 0;
+}
+
+.monster_hp {
+    position: absolute;
+    left: 0px;
+    top: -20px;
+    height: 5px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: #aaaaaa;
+}
+
+.monster_hp_remain {
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    height: 5px;
+    margin: 0 auto;
+    background-color: #E91E63;
+    border-radius: 10px;
+}
+
+.invisible {
+    display: none;
+}
+
+/* 아이템 선택 */
+#item_select {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 60%;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 7px;
+}
+
+#item_select_title{
+    margin-top : 5%;
+    background-image: url('../img/sidebar/itemselect.png');
+    background-size : 60% 45%;
+    background-repeat : no-repeat;
+    background-position : center;
+}
+
+.item {
+    margin: 0 2%;
+    width: 20%;
+    height: 65%;
+    border-style: solid;
+    border-width: 7px;
+    border-radius: 8px;
+    background-color: rgba(0, 114, 255, 0.2);
+}
+
+#itemWrapper {
+    display: flex;
+    justify-content : center;
+    align-items : center;
+    width: 100%;
+    height: 40%;
+}
+
+.selected_item {
+    width: 100%;
+    height: 100%;
+    background-size:  50% 70%;
+    background-repeat : no-repeat;
+    background-position: center;
+}
+
+.selected_2p {
+    border-color: red;
+}
+
+.selected_1p {
+    border-color: blue;
+}
+
+.itemPadding {
+    justify-content: center;
+    position: relative;
+    display : flex;
+    width: 100%;
+    height: 25%;
+}
+
+.item_description {
+    width: 80%;
+    height: 80%;
+    margin: 0 1%;
+    background-color : rgba(212, 206, 167, 0.3);
+    text-align : center;
+    border-width : 6px;
+    border-style : solid;
+    border-radius: 5px;
+    font-family : Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.gauge {
+    position: relative;
+    width: 100%;
+    height: 5px;
+    background-color: #aaaaaa;
+    border-radius: 30px;
+    margin-bottom: 10%;
+}
+
+
+#charging_1 {
+    position: relative;
+    width: 0%;
+    height: 5px;
+    background-color: #4CAF50;
+    border-radius: 30px;
+}
+
+#charging_2 {
+    position: relative;
+    width: 0%;
+    height: 5px;
+    background-color: #4CAF50;
+    border-radius: 30px;
+}
+
+.arrow_box {
+    display : flex;
+	background: #1d0e00;
+}
+.arrow_box:after, .arrow_box:before {
+	left: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: "";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-left-color: #b97a57;
+	border-width: 30px;
+	margin-top: -30px;
+}
+.arrow_box:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-left-color: #1d0e00;
+	border-width: 36px;
+	margin-top: -36px;
+}
+
+#howManyPlayer{
+    background-color: #1d0e00;
+    float : left;
+    width: 100%;
+    height : 100%;
+}
