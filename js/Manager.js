@@ -92,7 +92,7 @@ class GameManager{
         const ADJUST = (2 - this.#howManyPlayer);
         this.#HEROMANAGER.push(new Beginner({
             left : 60 - 10 * ADJUST ,
-            bottom : /* bottom = */ 60, 
+            bottom : /* bottom = */ 30, 
             damage : /* damage = */ 2 + 2 * ADJUST, 
             attackSpeed : /* attackSpeed = */ 1000 - 200 * ADJUST, 
             attackRange : /* attackRange = */ 150, // + 50 * ADJUST, 
@@ -118,7 +118,7 @@ class GameManager{
 
         this.#HEROMANAGER.push(new Beginner({
             left : 40 ,
-            bottom : /* bottom = */ 60, 
+            bottom : /* bottom = */ 30, 
             damage : /* damage = */ 2, 
             attackSpeed : /* attackSpeed = */ 1000, 
             attackRange : /* attackRange = */ 150, 
