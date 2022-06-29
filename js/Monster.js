@@ -697,14 +697,17 @@ class Penguin extends Monster{
 
 
 class normalPenguin extends Penguin{
-    constructor(left, bottom, whichMonster){
+    constructor(left, bottom, whichMonster, undead = false){
         const width = 48;
         const height = 48;
         const damage = 10;
         const attackSpeed = 0;
         const attackRange = 150;
         const movingSpeed = 3;
-        const maxhp = 7;
+        let maxhp;
+        if(undead) maxhp = 1000;
+        else maxhp = 7;
+        
 
         super(left, bottom, width, height, damage, attackSpeed, attackRange, movingSpeed, maxhp, whichMonster, 'penguin');
 
@@ -727,14 +730,16 @@ class normalPenguin extends Penguin{
 }
 
 class kingPenguin extends Penguin{
-    constructor(left, bottom, whichMonster){
+    constructor(left, bottom, whichMonster, undead = false){
         const width = 48;
         const height = 48;
         const damage = 10;
         const attackSpeed = 0;
         const attackRange = 150;
         const movingSpeed = 5;
-        const maxhp = 7;
+        let maxhp;
+        if(undead) maxhp = 1000;
+        else maxhp = 7;
 
         super(left, bottom, width, height, damage, attackSpeed, attackRange, movingSpeed, maxhp, whichMonster, 'kingpenguin');
 

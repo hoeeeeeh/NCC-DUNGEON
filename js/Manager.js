@@ -90,10 +90,10 @@ class GameManager{
         }
 
         const ADJUST = (2 - this.#howManyPlayer);
-        this.#HEROMANAGER.push(new Beginner({
+        this.#HEROMANAGER.push(new Dealer({
             left : 60 - 10 * ADJUST ,
-            bottom : /* bottom = */ 30, 
-            damage : /* damage = */ 2 + 2 * ADJUST, 
+            bottom : /* bottom = */ 60, 
+            damage : /* damage = */ 200 + 2 * ADJUST, 
             attackSpeed : /* attackSpeed = */ 1000 - 200 * ADJUST, 
             attackRange : /* attackRange = */ 150, // + 50 * ADJUST, 
             movingSpeed : /* movingSpeed = */ 6 + 0.5 * ADJUST, 
@@ -118,11 +118,11 @@ class GameManager{
 
         this.#HEROMANAGER.push(new Beginner({
             left : 40 ,
-            bottom : /* bottom = */ 30, 
-            damage : /* damage = */ 2, 
+            bottom : /* bottom = */ 60, 
+            damage : /* damage = */ 200, 
             attackSpeed : /* attackSpeed = */ 1000, 
             attackRange : /* attackRange = */ 150, 
-            movingSpeed : /* movingSpeed = */ 6, 
+            movingSpeed : /* movingSpeed = */ 60, 
             maxhp : /* maxhp = */ 100, 
             whichPlayer : /* whichPlayer = */ Hero.numberOfHero++, 
             whichMotion : /* whichMotion = */ 0, 

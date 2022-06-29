@@ -15,10 +15,23 @@
 
 */
 
-
+import fs from "fs";
 
 const openBrowserAndThen = new BrowserManager();
 openBrowserAndThen.init();
 openBrowserAndThen.selectTitle();
 
+function preloading(imageArray) {
+  let n = imageArray.length;
+  for (let i = 0; i < n; i++) {
+    let img = new Image();
+    img.src = imageArray[i];
+  }
+}
 
+preloading(["./img/background/background_2.png"]);
+
+var fs = require("fs");
+var files = fs.readdirSync("./img");
+
+console.log(files.length);
