@@ -114,27 +114,30 @@ class GameManager {
 
     const ADJUST = 2 - this.#howManyPlayer;
     this.#HEROMANAGER.push(
-      new Beginner({
-        left: 40,
-        bottom: /* bottom = */ 60,
-        damage: /* damage = */ 2,
-        attackSpeed: /* attackSpeed = */ 1000,
-        attackRange: /* attackRange = */ 150,
-        movingSpeed: /* movingSpeed = */ 60,
-        maxhp: /* maxhp = */ 100,
-        whichPlayer: /* whichPlayer = */ Hero.numberOfHero++,
-        whichMotion: /* whichMotion = */ 0,
-        whichDirectionDoesHeGo: /* whichDirectionDoesHeGo */ 38,
-        key: {
-          left: 68,
-          right: 71,
-          bottom: 70,
-          up: 82,
-          attack: 192,
-          dash: 49,
-          specialAttack: 50,
-        },
-      })
+      new Beginner(
+        {
+          left: 60 - 10 * ADJUST,
+          bottom: /* bottom = */ 60,
+          damage: /* damage = */ 2 + 2 * ADJUST,
+          attackSpeed: /* attackSpeed = */ 1000 - 200 * ADJUST,
+          attackRange: /* attackRange = */ 150, // + 50 * ADJUST,
+          movingSpeed: /* movingSpeed = */ 6 + 0.5 * ADJUST,
+          maxhp: /* maxhp = */ 100 + 50 * ADJUST,
+          whichPlayer: /* whichPlayer = */ Hero.numberOfHero++,
+          whichMotion: /* whichMotion = */ 0,
+          whichDirectionDoesHeGo: /* whichDirectionDoesHeGo */ 38,
+          key: {
+            left: 37,
+            right: 39,
+            bottom: 40,
+            up: 38,
+            attack: 188,
+            dash: 190,
+            specialAttack: 191,
+          },
+        }
+        //this.#MONSTEROBSTACLE,
+      )
     );
 
     if (this.#howManyPlayer < 2) return;
