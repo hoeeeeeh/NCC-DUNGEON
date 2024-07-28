@@ -15,7 +15,7 @@
 
 */
 
-import fs from "fs";
+// import fs from "fs";
 
 const openBrowserAndThen = new BrowserManager();
 openBrowserAndThen.init();
@@ -29,8 +29,8 @@ function preloading(imageArray) {
   }
 }
 
-preloading(["./img/background/background_2.png"]);
+// preloading(["./img/background/background_2.png"]);
 
-var files = fs.readdirSync("./img");
+// var files = fs.readdirSync("./img");
 
-console.log(files.length);
+// console.log(files.length);
