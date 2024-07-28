@@ -31,7 +31,6 @@ function preloading(imageArray) {
 
 preloading(["./img/background/background_2.png"]);
 
-var fs = require("fs");
 var files = fs.readdirSync("./img");
 
 console.log(files.length);
