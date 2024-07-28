@@ -2,5 +2,6 @@
 	"name": "ncc-dungeon-demo",
 	"main": "main.js",
 	"description" : "ncc-dungeon-demo",
-	"version" : "0.1.0"
+	"version" : "0.1.0",
+	"type": "module"
 }
