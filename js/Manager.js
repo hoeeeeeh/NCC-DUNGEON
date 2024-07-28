@@ -118,7 +118,7 @@ class GameManager {
         {
           left: 60 - 10 * ADJUST,
           bottom: /* bottom = */ 60,
-          damage: /* damage = */ 200 + 2 * ADJUST,
+          damage: /* damage = */ 20 + 2 * ADJUST,
           attackSpeed: /* attackSpeed = */ 1000 - 200 * ADJUST,
           attackRange: /* attackRange = */ 150, // + 50 * ADJUST,
           movingSpeed: /* movingSpeed = */ 6 + 0.5 * ADJUST,
@@ -146,7 +146,7 @@ class GameManager {
       new Beginner({
         left: 40,
         bottom: /* bottom = */ 60,
-        damage: /* damage = */ 200,
+        damage: /* damage = */ 20,
         attackSpeed: /* attackSpeed = */ 1000,
         attackRange: /* attackRange = */ 150,
         movingSpeed: /* movingSpeed = */ 60,
