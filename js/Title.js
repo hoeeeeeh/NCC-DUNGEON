@@ -65,7 +65,7 @@ class Title {
     }
 
     gameStart = ()=>{
-        document.documentElement.requestFullscreen(); // 전체화면 모드 진입
+        // document.documentElement.requestFullscreen(); // 전체화면 모드 진입
         new GameManager(this.howManyPlayer + 1).setUpTheGame();
         
         // const gameLoad = setInterval(()=>{
