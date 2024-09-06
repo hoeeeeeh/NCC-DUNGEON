@@ -66,14 +66,15 @@ class Title {
 
     gameStart = ()=>{
         document.documentElement.requestFullscreen(); // 전체화면 모드 진입
-
-        const gameLoad = setInterval(()=>{
-            console.log('game load....');
-            if(window.innerHeight == screen.height){
-                new GameManager(this.howManyPlayer + 1).setUpTheGame();
-                clearInterval(gameLoad);
-            }
-        }, 100);
+        new GameManager(this.howManyPlayer + 1).setUpTheGame();
+        
+        // const gameLoad = setInterval(()=>{
+        //     console.log('game load....');
+        //     if(window.innerHeight == screen.height){
+        //         new GameManager(this.howManyPlayer + 1).setUpTheGame();
+        //         clearInterval(gameLoad);
+        //     }
+        // }, 100);
     }
 
     characterSelect = ()=>{
